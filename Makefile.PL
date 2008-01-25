@@ -1,23 +1,18 @@
-use utf8;
-use inc::Module::Install;
+use ExtUtils::MakeMaker;
 
-name 'SMS-Send-IS-Vit';
+WriteMakefile(
+    NAME		  => 'SMS::Send::IS::Vit',
+    AUTHOR        => 'Ævar Arnfjörð Bjarmason <avar@cpan.org>',
+    ABSTRACT_FROM => 'Vit.pm',
+    VERSION_FROM  => 'Vit.pm',
+    LICENSE       => 'perl',
+    PREREQ_PM     => {
+        # Vit.pm
+        'SMS::Send::Driver' => '0.04',
+        'LWP::UserAgent'    => 0,
+        'HTTP::Cookies'     => 0,
 
-author 'Ævar Arnfjörð Bjarmason <avar@cpan.org>';
-
-abstract_from 'Vit.pm';
-license_from  'Vit.pm';
-version_from  'Vit.pm';
-
-# Vit.pm
-requires 'SMS::Send::Driver' => '0.04';
-requires 'LWP::UserAgent';
-requires 'HTTP::Cookies';
-
-# t/
-build_requires 'Test::More' => 0; # 5.007003
-
-tests 't/*.t';
-
-auto_install;
-WriteAll;
+        # t/
+        'Test::More' => 0,
+    },
+);

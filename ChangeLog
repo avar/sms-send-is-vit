@@ -1,3 +1,7 @@
+2008-01-25  Ævar Arnfjörð Bjarmason  <avar@cpan.org> (0.02)
+
+	* Makefile.PL: Drop M::I for EU::MM
+
 2007-07-27  Ævar Arnfjörð Bjarmason  <avar@cpan.org> (0.01)
 
 	* Initial release
